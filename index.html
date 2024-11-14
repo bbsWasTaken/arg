@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>baris secret logs</title>
+    <title>Maip 1.0.16.05_02</title>
     <style>
         body {
             background-color: black;
@@ -25,19 +25,53 @@
         @keyframes blinker {
             50% { opacity: 0; }
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>welcome. enter your</h1>
-        <p>Username:</p>
-        <p>Password: <span class="blink">_</span></p>
-        <p><a href="#login" onclick="showClues()">Enter</a></p>
+        <h1>Maip, C&R Appliance and Intrusion System Interface</h1>
+        <h1>Version 1.0.16.05_02, Alpha E</h1>
+        <h1>Ready...</h1>
+        
+        <!-- Username and Password Form -->
+        <form id="loginForm" onsubmit="return checkLogin(event)">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Enter</button>
+        </form>
+
+        <!-- Hidden content (video page) -->
+        <div id="videoPage" class="hidden">
+            <h2>Access Granted</h2>
+            <p>Welcome to the next phase...</p>
+            <video controls>
+                <source src="your-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
+
     <script>
-        function showClues() {
-            alert("Welcome, secret agent! Your first clue is hidden in plain sight...");
-            // Customize this function to add clues or other interactivity.
+        // Function to validate login credentials
+        function checkLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check if the credentials are correct
+            if (username === "bbs" && password === "password01") {
+                // Hide the login form and show the video page
+                document.getElementById("loginForm").classList.add("hidden");
+                document.getElementById("videoPage").classList.remove("hidden");
+            } else {
+                alert("Incorrect username or password. Please try again.");
+            }
         }
     </script>
 </body>
