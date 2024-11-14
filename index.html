@@ -34,7 +34,7 @@
     <div class="container">
         <h1>Maip, C&R Appliance and Intrusion System Interface</h1>
         <h1>Version 1.0.16.05_02, Alpha E</h1>
-        <h1>Ready...</h1>
+        
         
         <!-- Username and Password Form -->
         <form id="loginForm" onsubmit="return checkLogin(event)">
@@ -47,10 +47,10 @@
 
         <!-- Hidden content (video page) -->
         <div id="videoPage" class="hidden">
-            <h2>Access Granted</h2>
-            <p>Welcome to the next phase...</p>
+            <h2>ACCESS GRANTED</h2>
+            <p></p>
             <video controls>
-                <source src="your-video.mp4" type="video/mp4">
+                <source src="InGen Incident.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -70,7 +70,7 @@
                 document.getElementById("loginForm").classList.add("hidden");
                 document.getElementById("videoPage").classList.remove("hidden");
             } else {
-                alert("Incorrect username or password. Please try again.");
+                alert("access: PERMISSION DENIED.");
             }
         }
     </script>
