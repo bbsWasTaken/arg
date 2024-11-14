@@ -6,8 +6,8 @@
     <title>Maip 1.0.16.05_02</title>
     <style>
         body {
-            background-color: #0f0f0f; /* Darker background to resemble BIOS */
-            color: #d0d0d0; /* Light gray, almost white */
+            background-color: #0f0f0f;
+            color: #d0d0d0;
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
@@ -28,13 +28,18 @@
         .hidden {
             display: none;
         }
+        hr {
+            border: none;
+            border-top: 1px solid #5a5a5a; /* Thin, gray line */
+            margin: 10px 0;
+        }
         label, button, h1, h2, p {
-            color: #d0d0d0; /* Consistent color across all elements */
+            color: #d0d0d0;
         }
         input {
-            background-color: #2b2b2b; /* Dark input field background */
-            color: #d0d0d0; /* Light text color */
-            border: 1px solid #5a5a5a; /* Border color to mimic retro style */
+            background-color: #2b2b2b;
+            color: #d0d0d0;
+            border: 1px solid #5a5a5a;
             font-family: 'Courier New', Courier, monospace;
             padding: 5px;
         }
@@ -47,7 +52,7 @@
             font-family: 'Courier New', Courier, monospace;
         }
         button:hover {
-            background-color: #444444; /* Slight hover effect */
+            background-color: #444444;
         }
     </style>
 </head>
@@ -56,6 +61,8 @@
         <h1>Maip, C&R Appliance and Intrusion System Interface</h1>
         <h1>Version 1.0.16.05_02, Alpha E</h1>
         
+        <hr> <!-- Horizontal line added here -->
+
         <!-- Username and Password Form -->
         <form id="loginForm" onsubmit="return checkLogin(event)">
             <label for="username">Username:</label><br>
@@ -64,6 +71,8 @@
             <input type="password" id="password" name="password"><br><br>
             <button type="submit">Enter</button>
         </form>
+
+        <hr> <!-- Another horizontal line added here -->
 
         <!-- Hidden content (video page) -->
         <div id="videoPage" class="hidden">
@@ -76,16 +85,12 @@
     </div>
 
     <script>
-        // Function to validate login credentials
         function checkLogin(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-            
+            event.preventDefault(); 
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Check if the credentials are correct
             if (username === "bbs" && password === "password01") {
-                // Hide the login form and show the video page
                 document.getElementById("loginForm").classList.add("hidden");
                 document.getElementById("videoPage").classList.remove("hidden");
             } else {
@@ -95,4 +100,3 @@
     </script>
 </body>
 </html>
-
